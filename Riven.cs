@@ -243,7 +243,7 @@ namespace RivenSharp
 
         public static bool useHydra(Obj_AI_Base target)
         {
-            if (target.Distance(Player.ServerPosition) < (400 + target.BoundingRadius-20))
+            if (target.Distance(Player.ServerPosition) < (200 + target.BoundingRadius-20))
             {
                 sumItems.cast(SummonerItems.ItemIds.Tiamat);
                 sumItems.cast(SummonerItems.ItemIds.Hydra);
