@@ -266,7 +266,8 @@ namespace RivenSharp
             if (Config.Item("forceQE").GetValue<bool>() && sender.IsMe && arg.SData.Name.Contains("RivenFeint") && Riven.Q.IsReady() && LXOrbwalker.GetPossibleTarget() != null)
              {
                 Console.WriteLine("force q");
-                Riven.Q.Cast(LXOrbwalker.GetPossibleTarget().Position);
+                
+                Riven.Q.Cast();
                  Riven.forceQ = true;
                  // Riven.timer = new System.Threading.Timer(obj => { Riven.Player.IssueOrder(GameObjectOrder.MoveTo, Riven.difPos()); }, null, (long)100, System.Threading.Timeout.Infinite);
              }
@@ -297,7 +298,7 @@ namespace RivenSharp
                         if (LXOrbwalker.GetPossibleTarget() == null || LXOrbwalker.GetPossibleTarget().NetworkId != netId)
                             return;
                         if (!LXOrbwalker.CanAttack())
-                            Riven.Q.Cast(LXOrbwalker.GetPossibleTarget().Position);
+                            Riven.Q.Cast();
                     }
 
                     if (args.PacketData[0] == 0x17)
